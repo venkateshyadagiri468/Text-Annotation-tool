@@ -1,0 +1,113 @@
+import type { AppState } from "../types";
+
+export const DEFAULT_APP_STATE: AppState = {
+  labels: [
+    {
+      id: "label-person",
+      name: "PERSON",
+      color: "#3B82F6",
+      shortcut: "1",
+      description: "People, including fictional characters, historical figures, and public figures.",
+      example: "Sundar Pichai, Dr. Elena Rostova, Tim Cook",
+    },
+    {
+      id: "label-org",
+      name: "ORG",
+      color: "#8B5CF6",
+      shortcut: "2",
+      description: "Companies, agencies, institutions, and other named organizations.",
+      example: "Google, Microsoft, Oxford University, Apple",
+    },
+    {
+      id: "label-loc",
+      name: "LOCATION",
+      color: "#10B981",
+      shortcut: "3",
+      description: "Non-GPE and GPE locations, cities, countries, facilities, and mountain ranges.",
+      example: "London, Tokyo, Berlin, Cupertino",
+    },
+    {
+      id: "label-pos",
+      name: "POSITIVE",
+      color: "#F59E0B",
+      shortcut: "4",
+      description: "Expressions of praise, satisfaction, optimism, or strong approval.",
+      example: "fantastic and battery life is great, works seamlessly",
+    },
+    {
+      id: "label-toxic",
+      name: "TOXIC",
+      color: "#EF4444",
+      shortcut: "5",
+      description: "Rude, disrespectful, harassing, or unreasonably aggressive language.",
+      example: "utterly incompetent, garbage, terrible advice",
+    },
+  ],
+  docs: [
+    {
+      id: "doc-1",
+      title: "Tech Industry Announcements",
+      text: "Sundar Pichai announced that Google is opening a new artificial intelligence research campus in London. Satya Nadella from Microsoft welcomed the investment, noting that Europe continues to lead in responsible algorithmic governance.",
+      annotations: [
+        { id: "ann-1-1", start: 0, end: 13, labelId: "label-person" },
+        { id: "ann-1-2", start: 29, end: 35, labelId: "label-org" },
+        { id: "ann-1-3", start: 96, end: 102, labelId: "label-loc" },
+        { id: "ann-1-4", start: 104, end: 117, labelId: "label-person" },
+        { id: "ann-1-5", start: 123, end: 132, labelId: "label-org" },
+      ],
+      status: "pending",
+      secondsSpent: 45,
+    },
+    {
+      id: "doc-2",
+      title: "Audio Hardware Customer Review",
+      text: "I purchased the Sony noise-canceling headphones last Friday in Tokyo. The acoustic clarity is fantastic and the battery life is absolutely marvelous! However, the companion mobile application is frustrating and keeps crashing.",
+      annotations: [
+        { id: "ann-2-1", start: 16, end: 20, labelId: "label-org" },
+        { id: "ann-2-2", start: 63, end: 68, labelId: "label-loc" },
+        { id: "ann-2-3", start: 94, end: 103, labelId: "label-pos" },
+        { id: "ann-2-4", start: 139, end: 159, labelId: "label-pos" },
+      ],
+      status: "pending",
+      secondsSpent: 30,
+    },
+    {
+      id: "doc-3",
+      title: "Biomedical Clinical Breakthrough",
+      text: "Dr. Elena Rostova and her research team at Oxford University published clinical trial findings today. The longitudinal study conducted across clinic centers in Berlin verified high treatment efficacy without adverse incidents.",
+      annotations: [
+        { id: "ann-3-1", start: 0, end: 17, labelId: "label-person" },
+        { id: "ann-3-2", start: 43, end: 60, labelId: "label-org" },
+        { id: "ann-3-3", start: 160, end: 166, labelId: "label-loc" },
+      ],
+      status: "pending",
+      secondsSpent: 20,
+    },
+    {
+      id: "doc-4",
+      title: "Keynote Presentation Discussion",
+      text: "During the product keynote in Cupertino, Tim Cook showcased the next-generation spatial computing hardware developed by Apple engineers. The community reaction online has been remarkably positive and celebratory.",
+      annotations: [
+        { id: "ann-4-1", start: 30, end: 39, labelId: "label-loc" },
+        { id: "ann-4-2", start: 41, end: 49, labelId: "label-person" },
+        { id: "ann-4-3", start: 121, end: 126, labelId: "label-org" },
+        { id: "ann-4-4", start: 177, end: 196, labelId: "label-pos" },
+      ],
+      status: "done",
+      secondsSpent: 78,
+    },
+    {
+      id: "doc-5",
+      title: "Community Moderation Flag",
+      text: "You are utterly incompetent and your code repository is garbage! Stop misleading innocent students with your atrocious guidance before you ruin someone's engineering career.",
+      annotations: [
+        { id: "ann-5-1", start: 8, end: 27, labelId: "label-toxic" },
+        { id: "ann-5-2", start: 56, end: 63, labelId: "label-toxic" },
+        { id: "ann-5-3", start: 105, end: 123, labelId: "label-toxic" },
+      ],
+      status: "pending",
+      secondsSpent: 15,
+    },
+  ],
+  activeDocId: "doc-1",
+};
